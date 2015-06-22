@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if blog_id %}
+  <form method="post" action"/{{ blog_id }}/edit">
+  <input type="hidden" name="id" value="{{ blog_id }}">
+{% else %}
+  <form method="post">
+{% endif %}
+  <label>
+    <div>title</div>
+    <input type="text" name="subject" value="{{ title }}">
+  </label>
+  <label>
+    <div>content</div>
+  	<textarea name="content" rows="25" cols="50">{{ content }}</textarea>
+  </label>
+  <div class = "error">{{ error }}</div>
+  <button>Submit</button>
+</form>
+{% endblock %}
